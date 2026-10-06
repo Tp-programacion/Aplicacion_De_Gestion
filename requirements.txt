@@ -1,5 +1,0 @@
-# Dependencias principales de la interfaz gráfica
-flet>=1.0.1,<2.0.0
-
-# Dependencias de testing (Requerimiento deseable para validar la aplicación)
-pytest>=8.0.0
