@@ -6,6 +6,17 @@ Este repositorio contiene el código fuente de una aplicación de gestión de es
 
 ---
 
+## Estructura de vistas
+
+`main.py` inicializa la aplicación, mantiene la sesión y dirige la navegación. Las pantallas están separadas dentro de `views/`:
+
+- `login.py`: inicio de sesión y registro.
+- `estacionamientos.py`: selección de estacionamiento.
+- `admin.py`: administración de lugares e historial de pagos.
+- `conductor.py`: disponibilidad y reservas.
+
+Cada vista recibe la página y el estado compartido desde `main.py`.
+
 ## Características y Funcionalidades
 
 El sistema cuenta con un sistema de autenticación de usuarios basado en dos roles principales: **Administradores** y **Conductores**.
