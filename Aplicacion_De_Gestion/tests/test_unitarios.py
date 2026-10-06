@@ -39,11 +39,6 @@ def crear_lugar_y_usuario(database, precio_hora=1000):
     return estacionamiento["id"], usuario["id"], lugar["id"]
 
 
-def test_hash_password_es_sha256_determinista(base_temporal):
-    assert base_temporal.hash_password("clave") == (
-        "8254c329a92850f6d539dd376f4816ee2764517da5e0235514af433164480d7a"
-    )
-
 
 def test_registrar_usuario_valida_datos_y_permite_login(base_temporal):
     ok, mensaje = base_temporal.registrar_usuario(

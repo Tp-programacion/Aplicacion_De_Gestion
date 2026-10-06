@@ -15,11 +15,6 @@ def get_connection():
     return conn
 
 
-def hash_password(password: str) -> str:
-    """Genera un hash SHA-256 de la contraseña (nunca se guarda en texto plano)."""
-    return hashlib.sha256(password.encode("utf-8")).hexdigest()
-
-
 def init_db():
     """Crea las tablas si no existen y un usuario administrador por defecto."""
     conn = get_connection()
@@ -74,7 +69,7 @@ def init_db():
     if cur.fetchone() is None:
         cur.execute(
             "INSERT INTO usuarios (username, password, nombre, rol) VALUES (?, ?, ?, ?)",
-            ("admin", hash_password("admin123"), "Administrador", "admin"),
+            ("admin", encriptar_dato("admin123"), "Administrador", "admin"),
         )
 
     # Un par de estacionamientos de ejemplo, para no arrancar con la lista vacía
@@ -100,7 +95,7 @@ def crear_usuario(username, password, nombre, rol):
     try:
         conn.execute(
             "INSERT INTO usuarios (username, password, nombre, rol) VALUES (?, ?, ?, ?)",
-            (username, hash_password(password), nombre, rol),
+            (username, encriptar_dato(password), nombre, rol),
         )
         conn.commit()
         return True, "Usuario creado correctamente"

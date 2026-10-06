@@ -34,7 +34,7 @@ def vista_login(page: ft.Page, db, sesion, mostrar_snack, cerrar_sesion):
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                     controls=[
                         ft.Icon(ft.Icons.LOCAL_PARKING, size=60, color=ft.Colors.BLUE_600),
-                        ft.Text("Gestión de Estacionamiento", size=26, weight=ft.FontWeight.BOLD),
+                        ft.Text("ParkingSeach", size=26, weight=ft.FontWeight.BOLD),
                         ft.Container(height=20),
                         username_field,
                         password_field,

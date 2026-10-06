@@ -10,7 +10,7 @@ from views import (
 
 
 def main(page: ft.Page):
-    page.title = "Gestión de Estacionamiento"
+    page.title = "ParkingSeach"
     page.window.width = 900
     page.window.height = 650
     page.theme_mode = ft.ThemeMode.LIGHT
